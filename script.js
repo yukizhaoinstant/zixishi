@@ -3,10 +3,13 @@ function changeScene(type) {
 
   const scenes = {
     day: "IMG_1333.jpeg",
-    night: "assets/images/room_night.jpg",
-    rain: "assets/images/rain_window.jpg"
+    night: "IMG_1334.jpeg",
+    rain: "IMG_1335.jpeg",
+    library: "IMG_1336.jpeg"
   };
 
+  scene.style.backgroundImage = `url(${scenes[type]})`;
+}
   scene.style.backgroundImage = `url(${scenes[type]})`;
 }
 const audio = document.getElementById("audio");
