@@ -3,14 +3,22 @@ const audio = document.getElementById("audio");
 
 const scenes = {
   day: {
-    image: "assets/images/day.jpg",
-    sound: "assets/sounds/day.mp3"
+    image: "day.jpg",
+    sound: "day.mp3"
   },
   night: {
-    image: "assets/images/night.jpg",
-    sound: "assets/sounds/night.mp3"
+    image: "night.jpg",
+    sound: "night.mp3"
   }
 };
+
+function switchScene(type) {
+  scene.style.backgroundImage = `url(${scenes[type].image})`;
+  audio.src = scenes[type].sound;
+  audio.play().catch(() => {
+    console.log("Audio blocked until user interaction");
+  });
+}
 
 function switchScene(type) {
   scene.style.backgroundImage = `url(${scenes[type].image})`;
