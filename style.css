@@ -7,12 +7,26 @@
 #scene {
   width: 100vw;
   height: 100vh;
-  background-image: url("day.jpg"); /* 預設白天 */
+  background-image: url("day.jpg");
   background-size: cover;
   background-position: center;
-  transition: background-image 0.5s ease;
+  position: relative;
 }
 
+/* ⏱ 計時器 */
+#timer {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 42px;
+  padding: 16px 24px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border-radius: 12px;
+  font-family: monospace;
+}
+
+/* 按鈕 */
 .controls {
   position: absolute;
   bottom: 40px;
@@ -23,10 +37,10 @@
 }
 
 button {
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 14px 28px;
+  font-size: 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   background: rgba(0,0,0,0.6);
   color: white;
@@ -34,23 +48,4 @@ button {
 
 button:hover {
   background: rgba(0,0,0,0.8);
-}
-#timer {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-
-  padding: 14px 22px;
-
-  font-size: 32px;          /* ⭐ 字變大 */
-  font-weight: 600;
-  letter-spacing: 2px;
-
-  color: white;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 12px;
-
-  font-family: monospace;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
