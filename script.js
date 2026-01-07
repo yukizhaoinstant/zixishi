@@ -19,12 +19,3 @@ function switchScene(type) {
     console.log("Audio blocked until user interaction");
   });
 }
-
-function switchScene(type) {
-  scene.style.backgroundImage = `url(${scenes[type].image})`;
-  audio.src = scenes[type].sound;
-  audio.play();
-}
-
-// 預設進站是白天
-switchScene("day");
