@@ -1,11 +1,24 @@
-<div id="scene">
-  <div class="controls">
-    <button onclick="switchScene('day')">☀️ 白天</button>
-    <button onclick="switchScene('night')">🌙 夜晚</button>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>自習室</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="scene">
+    <div class="controls">
+      <button onclick="switchScene('day')">☀️ 白天</button>
+      <button onclick="switchScene('night')">🌙 夜晚</button>
+    </div>
   </div>
-</div>
 
-<audio id="audio-day" src="day.mp3" loop></audio>
-<audio id="audio-night" src="night.mp3" loop></audio>
+  <!-- 兩個 audio，各自固定音檔 -->
+  <audio id="audio-day" src="day.mp3" loop></audio>
+  <audio id="audio-night" src="night.mp3" loop></audio>
 
-<script src="script.js"></script>
+  <!-- 只能有一個 -->
+  <script src="script.js"></script>
+</body>
+</html>
