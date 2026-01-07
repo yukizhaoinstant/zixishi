@@ -2,11 +2,11 @@ const scene = document.getElementById("scene");
 const audioDay = document.getElementById("audio-day");
 const audioNight = document.getElementById("audio-night");
 
-let audioUnlocked = false;
+// iOS 必須先解鎖 audio
+let unlocked = false;
 
-// ⭐ 一次性解鎖所有音訊（iOS 必要）
-function unlockAllAudio() {
-  if (audioUnlocked) return;
+function unlockAudio() {
+  if (unlocked) return;
 
   [audioDay, audioNight].forEach(audio => {
     audio.muted = true;
@@ -17,10 +17,10 @@ function unlockAllAudio() {
     }).catch(() => {});
   });
 
-  audioUnlocked = true;
+  unlocked = true;
 }
 
-function stopAllAudio() {
+function stopAll() {
   audioDay.pause();
   audioDay.currentTime = 0;
   audioNight.pause();
@@ -28,18 +28,16 @@ function stopAllAudio() {
 }
 
 function switchScene(type) {
-  // 🔓 每次點擊都確保已解鎖（只會跑一次）
-  unlockAllAudio();
-
-  stopAllAudio();
+  unlockAudio();
+  stopAll();
 
   if (type === "day") {
-    scene.style.backgroundImage = "url(day.jpg)";
+    scene.style.backgroundImage = 'url("day.jpg")';
     audioDay.play();
   }
 
   if (type === "night") {
-    scene.style.backgroundImage = "url(night.jpg)";
+    scene.style.backgroundImage = 'url("night.jpg")';
     audioNight.play();
   }
 }
