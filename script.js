@@ -2,26 +2,42 @@ const scene = document.getElementById("scene");
 const audioDay = document.getElementById("audio-day");
 const audioNight = document.getElementById("audio-night");
 
-function stopAllAudio() {
+// iOS 必須先解鎖 audio
+let unlocked = false;
+
+function unlockAudio() {
+  if (unlocked) return;
+
+  [audioDay, audioNight].forEach(audio => {
+    audio.muted = true;
+    audio.play().then(() => {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.muted = false;
+    }).catch(() => {});
+  });
+
+  unlocked = true;
+}
+
+function stopAll() {
   audioDay.pause();
-  audioNight.pause();
   audioDay.currentTime = 0;
+  audioNight.pause();
   audioNight.currentTime = 0;
 }
 
 function switchScene(type) {
-  stopAllAudio();
+  unlockAudio();
+  stopAll();
 
   if (type === "day") {
-    scene.style.backgroundImage = "url('day.jpg')";
-    audioDay.play().catch(() => {});
+    scene.style.backgroundImage = 'url("day.jpg")';
+    audioDay.play();
   }
 
   if (type === "night") {
-    scene.style.backgroundImage = "url('night.jpg')";
-    audioNight.play().catch(() => {});
+    scene.style.backgroundImage = 'url("night.jpg")';
+    audioNight.play();
   }
 }
-
-// 預設進站是白天
-switchScene("day");
