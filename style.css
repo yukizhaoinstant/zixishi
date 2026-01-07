@@ -7,9 +7,10 @@
 #scene {
   width: 100vw;
   height: 100vh;
+  background-image: url("day.jpg"); /* 預設白天 */
   background-size: cover;
   background-position: center;
-  transition: background-image 0.6s ease;
+  transition: background-image 0.5s ease;
 }
 
 .controls {
@@ -33,11 +34,4 @@ button {
 
 button:hover {
   background: rgba(0,0,0,0.8);
-}
-#scene{
-  width:100vw;
-  height:100vh;
-  background-image: url("day.jpg");
-  background-size: cover;
-  background-position: center;
 }
