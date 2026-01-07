@@ -8,10 +8,15 @@
 <body>
 
   <div id="scene">
+
+    <!-- ⭐ 計時器（一定要在 body 裡） -->
+    <div id="timer">00:00:00</div>
+
     <div class="controls">
       <button onclick="switchScene('day')">☀️ 白天</button>
       <button onclick="switchScene('night')">🌙 夜晚</button>
     </div>
+
   </div>
 
   <!-- 兩個 audio，各自固定音檔 -->
@@ -20,6 +25,6 @@
 
   <!-- 只能有一個 -->
   <script src="script.js"></script>
+
 </body>
 </html>
-<div id="timer">00:00:00</div>
