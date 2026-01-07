@@ -7,10 +7,10 @@
 #scene {
   width: 100vw;
   height: 100vh;
-  background-image: url("day.jpg");
+  background-image: url("day.jpg"); /* 預設白天 */
   background-size: cover;
   background-position: center;
-  position: relative;
+  transition: background-image 0.5s ease;
 }
 
 .controls {
@@ -23,10 +23,10 @@
 }
 
 button {
-  padding: 14px 28px;
-  font-size: 18px;
+  padding: 12px 24px;
+  font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   background: rgba(0,0,0,0.6);
   color: white;
